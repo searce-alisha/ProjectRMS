@@ -6,7 +6,7 @@ steps:
       - |
         #!/bin/bash
 
-        # Print the current directory
+        
         pwd
 
         # List files in the current directory
