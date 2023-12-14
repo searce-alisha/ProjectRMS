@@ -1,2 +1,16 @@
 steps:
-- name: gcr.io/cloud-builders/git
+  - name: 'gcr.io/cloud-builders/bash'
+    entrypoint: 'bash'
+    args:
+      - '-c'
+      - |
+        #!/bin/bash
+
+        # Print the current directory
+        pwd
+
+        # List files in the current directory
+        ls -la
+
+        # Example: Run tests or any other bash commands
+        # ./run_tests.sh
