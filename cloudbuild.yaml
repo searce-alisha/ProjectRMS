@@ -1,3 +1,5 @@
 steps:
 - name: 'ubuntu'
   args: ['echo', 'hello world']
+- name: 'gcr.io/cloud-builders/git'
+  args: ['clone', 'https://github.com/searce-alisha/ProjectRMS.git']
