@@ -13,5 +13,5 @@ steps:
   args: 
     - '-c'
     - |
-      git show HEAD
+      git show HEAD --name-only
     
