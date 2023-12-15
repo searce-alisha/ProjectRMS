@@ -13,7 +13,7 @@ steps:
 #  args: ['gsutil', 'cp', 'winrm.py', 'gs://asia-south1-indigo-test-com-1c20fcce-bucket/dags/']
 
 # Copying file based on COMMIT HASH PATH
-- name: 'ubuntu'
+- name: 'gcr.io/cloud-builders/git'
   entrypoint: bash
   args: 
     - '-c'
