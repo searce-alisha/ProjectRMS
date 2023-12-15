@@ -14,4 +14,5 @@ steps:
     - '-c'
     - |
       git log
-      git diff $COMMIT_SHA^..COMMIT_SHA
+      git show HEAD
+      git show HEAD^
