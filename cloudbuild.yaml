@@ -1,5 +1,20 @@
 steps:
+# Verifying Execution
 - name: 'ubuntu'
   args: ['echo', 'hello world']
+# Cloning repo
 - name: 'gcr.io/cloud-builders/git'
   args: ['clone', 'https://github.com/searce-alisha/ProjectRMS.git']
+# Copying Rscripts into gcs bucket
+- name: 'google.com/cloudsdktool/cloud-sdk'
+  args: ['gsutil', 'cp', 'file.txt', 'gs://aldemobucket']
+# Copying DAGs to gcs
+#- name: 'google.com/cloudsdktool/cloud-sdk'
+#  args: ['gsutil', 'cp', 'winrm.py', 'gs://asia-south1-indigo-test-com-1c20fcce-bucket/dags/']
+
+# Copying file based on COMMIT HASH PATH
+- name: 'ubuntu'
+  args: 
+    - echo
+    - $COMMIT_SHA
+    - $(git diff --name-only $COMMIT_SHA..HEAD)
