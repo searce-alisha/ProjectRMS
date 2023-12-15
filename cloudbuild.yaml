@@ -15,9 +15,5 @@ steps:
 # Copying file based on COMMIT HASH PATH
 - name: 'ubuntu'
   entrypoint: bash
-  args: 
-    - '-c'
-    - |
-      echo
-      $COMMIT_SHA
+  args: ['echo', '$COMMIT_SHA']
      # git diff --name-only $COMMIT_SHA..HEAD
