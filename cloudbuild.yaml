@@ -16,7 +16,7 @@ steps:
 - name: 'ubuntu'
   entrypoint: bash
   args: 
-    - -c
+    - '-c'
     - |
       echo
       $COMMIT_SHA
