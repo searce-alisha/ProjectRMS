@@ -13,6 +13,4 @@ steps:
   args: 
     - '-c'
     - |
-      git checkout Dev
-      dev= $(git diff --name-only HEAD^..HEAD)
-      echo $dev
+      git log
