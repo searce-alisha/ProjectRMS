@@ -4,7 +4,7 @@ steps:
   args: ['echo', 'hello world']
 # Cloning repo
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', '--unshallow', https://github.com/searce-alisha/ProjectRMS.git']
+  args: ['clone','https://github.com/searce-alisha/ProjectRMS.git']
 
 
 # Copying file based on COMMIT HASH PATH
@@ -13,5 +13,6 @@ steps:
   args: 
     - '-c'
     - |
+      git checkout Dev
       dev= $(git diff --name-only HEAD^..HEAD)
       echo $dev
