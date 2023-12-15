@@ -14,3 +14,4 @@ steps:
     - '-c'
     - |
       git log
+      git diff $COMMIT_SHA^..COMMIT_SHA
