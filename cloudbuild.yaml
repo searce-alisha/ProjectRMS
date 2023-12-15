@@ -4,13 +4,8 @@ steps:
   args: ['echo', 'hello world']
 # Cloning repo
 - name: 'gcr.io/cloud-builders/git'
-  args: ['clone', 'https://github.com/searce-alisha/ProjectRMS.git']
-# Copying Rscripts into gcs bucket
-# - name: 'google.com/cloudsdktool/cloud-sdk'
-#   args: ['gsutil', 'cp', 'file.txt', 'gs://aldemobucket']
-# Copying DAGs to gcs
-#- name: 'google.com/cloudsdktool/cloud-sdk'
-#  args: ['gsutil', 'cp', 'winrm.py', 'gs://asia-south1-indigo-test-com-1c20fcce-bucket/dags/']
+  args: ['clone', '--unshallow', https://github.com/searce-alisha/ProjectRMS.git']
+
 
 # Copying file based on COMMIT HASH PATH
 - name: 'gcr.io/cloud-builders/git'
