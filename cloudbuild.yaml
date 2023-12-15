@@ -13,6 +13,5 @@ steps:
   args: 
     - '-c'
     - |
-      git log
       git show HEAD
     
