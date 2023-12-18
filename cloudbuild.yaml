@@ -8,23 +8,29 @@ steps:
 
 
 # Copying file based on COMMIT HASH PATH
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   entrypoint: bash
+#   args: 
+#     - '-c'
+#     - |
+    
+#       if [ -n "$(git show HEAD --name-only | grep Bookings/)" ]; then 
+#           echo "Booking files have changed"
+#       fi
+
+# - name: 'gcr.io/cloud-builders/gcloud'
+#   entrypoint: bash
+#   args:
+#     - '-c'
+#     - |
+    
+#       if [ -n "$(git show HEAD --name-only | grep Fares/)" ]; then 
+#               echo "Fares files have changed"
+#       fi
+       
 - name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: bash
   args: 
     - '-c'
     - |
-    
-      if [ -n "$(git show HEAD --name-only | grep Bookings/)" ]; then 
-          echo "Booking files have changed"
-      fi
-
-- name: 'gcr.io/cloud-builders/gcloud'
-  entrypoint: bash
-  args:
-    - '-c'
-    - |
-    
-      if [ -n "$(git show HEAD --name-only | grep Fares/)" ]; then 
-              echo "Fares files have changed"
-      fi
-       
+       git show $COMMIT_SHA
