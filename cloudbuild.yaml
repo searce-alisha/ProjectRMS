@@ -17,7 +17,7 @@ steps:
       # OUTPUT=$(git show HEAD --name-only | grep Bookings/)
       if [ -n "$(git show HEAD --name-only | grep Bookings/)" ]; then 
          echo "Booking files have changed"
-      elif [ -n "git show HEAD --name-only | grep Fares/" ]; then 
+      elif [ -n "$(git show HEAD --name-only | grep Fares/)" ]; then 
               echo "Fares files have changed" 
       fi
 
