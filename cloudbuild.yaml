@@ -13,5 +13,5 @@ steps:
   args: 
     - '-c'
     - |
-      git diff --name-only HEAD ${_PREVIOUS_COMMIT_ID}
+      git show HEAD
     
