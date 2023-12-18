@@ -8,7 +8,7 @@ steps:
 
 
 # Copying file based on COMMIT HASH PATH
-- name: 'gcr.io/cloud-builders/git'
+- name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: bash
   args: 
     - '-c'
@@ -18,7 +18,7 @@ steps:
           echo "Booking files have changed"
       fi
 
-- name: 'gcr.io/cloud-builders/git'
+- name: 'gcr.io/cloud-builders/gcloud'
   entrypoint: bash
   args:
     - '-c'
