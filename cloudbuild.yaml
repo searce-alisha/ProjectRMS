@@ -14,8 +14,8 @@ steps:
     - '-c'
     - |
 
-      OUTPUT=$(git show HEAD --name-only | grep Bookings/)
-      if [ -n "$OUTPUT" ]; then 
+      # OUTPUT=$(git show HEAD --name-only | grep Bookings/)
+      if [ -n "$(git show HEAD --name-only | grep Bookings/)" ]; then 
          echo "Booking files have changed"
       fi
 
@@ -24,8 +24,8 @@ steps:
   args:
     - '-c'
     - |
-      OUTPUT=$(git show HEAD --name-only | grep Fares/)
-      if [ -n "$OUTPUT" ]; then 
+    
+      if [ -n "git show HEAD --name-only | grep Fares/" ]; then 
               echo "Fares files have changed"
       fi
   
