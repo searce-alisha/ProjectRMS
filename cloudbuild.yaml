@@ -18,13 +18,13 @@ steps:
          echo "Booking files have changed"
        fi
 
-# - name: 'gcr.io/cloud-builders/git'
-#   entrypoint: bash
-#   args:
-#     - '-c'
-#     - |
-#        if [-n "$(git show HEAD --name-only | grep Fares/")]; then
-#          echo "Fares files has changed"
-#        fi
+- name: 'gcr.io/cloud-builders/git'
+  entrypoint: bash
+  args:
+    - '-c'
+    - |
+       if [ -n "$(git show HEAD --name-only | grep Booking/)" ]; then 
+         echo "Booking files have changed"
+       fi
   
        
