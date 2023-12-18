@@ -14,7 +14,7 @@ steps:
     - '-c'
     - |
 
-       if [- n "$(git show HEAD --name-only | grep Booking/)"] 
+       if [- n "$(git show HEAD --name-only | grep Booking/)"]; then 
        echo "Booking files has changed"
        fi
 
@@ -23,7 +23,7 @@ steps:
   args:
     - '-c'
     - |
-       if [-n "$(git show HEAD --name-only | grep Fares/")]
+       if [-n "$(git show HEAD --name-only | grep Fares/")]; then
          echo "Fares files has changed"
        fi
   
