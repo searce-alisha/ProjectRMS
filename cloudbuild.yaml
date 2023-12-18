@@ -14,17 +14,19 @@ steps:
     - '-c'
     - |
 
-       if [ -n "$(git show HEAD --name-only | grep Booking/)" ]; then 
+      OUTPUT=$(git show HEAD --name-only | grep Bookings/)
+      if [ -n "$OUTPUT" ]; then 
          echo "Booking files have changed"
-       fi
+      fi
 
 - name: 'gcr.io/cloud-builders/git'
   entrypoint: bash
   args:
     - '-c'
     - |
-       if [ -n "$(git show HEAD --name-only | grep Booking/)" ]; then 
-         echo "Booking files have changed"
-       fi
+      OUTPUT=$(git show HEAD --name-only | grep Fares/)
+      if [ -n "$OUTPUT" ]; then 
+              echo "Fares files have changed"
+      fi
   
        
